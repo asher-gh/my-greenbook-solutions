@@ -8,14 +8,18 @@ fn main() {
 	 * at the end sum should give the number of open doors
 	 */
 
-	let mut doors = [false; 100];
+	// round 0
+	let mut door_arr = [false; 100];
 
+	// starting with round 1 and every ith item
 	(1..100).for_each(|i| {
-		// starting at the ith item (starting at 0 caused false positives)
-		doors[i..100].iter_mut().step_by(i).for_each(|x| *x = !*x);
+		door_arr[i..100]
+			.iter_mut()
+			.step_by(i)
+			.for_each(|x| *x = !*x)
 	});
 
-	let open_doors: i32 = doors.iter().map(|x| *x as i32).sum();
+	let open_doors: usize = door_arr.iter().filter(|&&x| x == true).count();
 
 	println!("{open_doors}");
 }
