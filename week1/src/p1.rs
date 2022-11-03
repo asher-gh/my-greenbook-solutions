@@ -13,7 +13,7 @@ fn main() {
 
 	// starting with round 1 and every ith item
 	(1..100).for_each(|i| {
-		door_arr[i..100]
+		door_arr[0..100]
 			.iter_mut()
 			.step_by(i)
 			.for_each(|x| *x = !*x)

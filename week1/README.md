@@ -40,7 +40,7 @@ with sum of one branch of nodes at a level of the tree.
 
 **Truth Table**
 
-| day-0    | day-1    | day-2    | day-3    | Result   |
+| strip-1  | strip-2  | strip-3  | strip-4  | Result   |
 | -------- | -------- | -------- | -------- | -------- |
 | T        | T        | T        | T        | 15       |
 | T        | T        | T        | F        | 16       |
@@ -54,3 +54,6 @@ with sum of one branch of nodes at a level of the tree.
 
 It takes $n+6$ days to map $2^n$ items. Extending that to our problem, we should
 be able to figure out which soda bottle is poisoned in 16 days.
+
+However, if we can submit all test strips in one day, we can get the result in 7
+days (the minimum number of days required to get the results).

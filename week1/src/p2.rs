@@ -2,7 +2,7 @@
 * Task
 * 1 in 1000 bottles is poisoned.
 * 10 strips available to detect poison.
-* One test per day and 7 days for result.
+* One test per day and 7 days to get the result.
 *
 * How would you figure out the poisoned bottle in as few days as possible?
 */
@@ -17,8 +17,7 @@ struct Node<'a> {
 }
 
 impl<'a> Node<'a> {
-	fn is_poisoned(self) -> bool {
-		// testing if the bottles in certain range are poisoned
+	fn contains_poisoned_bottle(&self) -> bool {
 		return self.bottles.iter().fold(false, |a: bool, i| a | *i);
 	}
 }
@@ -27,15 +26,21 @@ struct BinTree<'a> {
 	root: &'a Node<'a>,
 }
 
-impl<'a> BinTree<'a> {}
+impl<'a> BinTree<'a> {
+	// populate the tree, such that each level correspond to
+	// a strip
+	fn prepare_strips(&self) {
+		todo!();
+	}
+}
 
 fn main() {
-	// 1000 bottles all set to false
+	// 1000 bottles
 	let mut bottles = [false; 1000];
 
-	// random bottle to poison
+	// poison a random bottle
 	let chosen = rand::thread_rng().gen_range(0..bottles.len());
 	bottles[chosen] = true;
 
-	println!("poisoned bottle: {chosen}");
+	dbg!(chosen); // stderr for debugging
 }
