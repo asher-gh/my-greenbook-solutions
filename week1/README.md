@@ -24,3 +24,33 @@ at once and you can reuse a test strip as many times as you'd like (as long as
 the results are negative). However, you can only run tests once per day and it
 takes seven days to return a result. How would you figure out the poisoned
 bottled in as few as possible?
+
+Split the bottles into sets of two as in a binary tree and each day submit test
+with sum of one branch of nodes at a level of the tree.
+
+![tree](prob2.png)
+
+| Day      | Test                    |
+| -------- | ----------------------- |
+| 0        | 1                       |
+| 1        | 3+5                     |
+| 2        | 7+9+11+13               |
+| 3        | 15+17+19+21+23+25+27+29 |
+| $\cdots$ | $\cdots$                |
+
+**Truth Table**
+
+| day-0    | day-1    | day-2    | day-3    | Result   |
+| -------- | -------- | -------- | -------- | -------- |
+| T        | T        | T        | T        | 15       |
+| T        | T        | T        | F        | 16       |
+| T        | T        | F        | T        | 17       |
+| T        | T        | F        | F        | 18       |
+| T        | F        | T        | T        | 19       |
+| T        | F        | T        | F        | 20       |
+| T        | F        | F        | T        | 21       |
+| T        | F        | F        | F        | 22       |
+| $\cdots$ | $\cdots$ | $\cdots$ | $\cdots$ | $\cdots$ |
+
+It takes $n+6$ days to map $2^n$ items. Extending that to our problem, we should
+be able to figure out which soda bottle is poisoned in 16 days.
