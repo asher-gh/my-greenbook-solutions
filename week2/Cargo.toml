@@ -12,4 +12,9 @@ path = "src/p1.rs"
 name = "p1ext"
 path = "src/p1ext.rs"
 
+[[bin]]
+name = "p2"
+path = "src/p2.rs"
+
 [dependencies]
+rand = "0.8.5" # Random number generators and other randomness functionality.

@@ -103,14 +103,15 @@ allowed.
 
 ```
 Input: [4, 17, 5, 6, 12, 1, 9]
-Output: [4, 5, 6, 9] Extension:
+Output: [4, 5, 6, 9]
 ```
 
-Since cloning technology is not available, you must perform it in-place. Stalin
-is merciful, and allows you to place a tombstone for each dead number.
-Tombstones let you know a number was killed, and represent the empty spaces at
-the end of the array. However, tombstones must be compliant with state law on
-standardised cemetary supplies, so better make those tombstones the value -1.
+Extension: Since cloning technology is not available, you must perform it
+in-place. Stalin is merciful, and allows you to place a tombstone for each dead
+number. Tombstones let you know a number was killed, and represent the empty
+spaces at the end of the array. However, tombstones must be compliant with state
+law on standardised cemetary supplies, so better make those tombstones the value
+-1.
 
 ```
 Input: [4, 17, 5, 6, 12, 1, 9]
