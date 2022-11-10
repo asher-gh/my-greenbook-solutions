@@ -9,9 +9,10 @@ the first instance where s1 is a substring of s2.
 
 ```
 
-Input: s1 = "abCd", s2 = "ffffabCdCefg" Output: 4 Extension: Return the index of
-all substrings of s1 in s2.
+Input: s1 = "abCd", s2 = "ffffabCdCefg" Output: 4
 ```
+
+_Extension_: Return the index of all substrings of s1 in s2.
 
 ## Solution
 
@@ -43,30 +44,33 @@ FOR i <- 0:l
 ```
 
 ```rust
-		let mut ptr = 0;
+let mut ptr = 0;
 
-		// O(n)
-		for (i, x) in s2.iter().enumerate() {
-			let l = s1.len();
+// O(n)
+for (i, x) in s2.iter().enumerate() {
+	let l = s1.len();
 
-			// O(1)
-			if ptr == l || (ptr == l - 1 && *x == s1[l - 1]) {
-				println!("{}", i - l);
-				ptr = 0;
-			}
+	// O(1)
+	if ptr == l || (ptr == l - 1 && *x == s1[l - 1]) {
+		println!("{}", i - l);
+		ptr = 0;
+	}
 
-			// O(1)
-			if let Some(c) = s1.get(ptr) {
-				if c == x {
-					ptr += 1;
-				} else if *x == s1[0] {
-					ptr = 1;
-				} else {
-					ptr = 0;
-				}
-			}
+	// O(1)
+	if let Some(c) = s1.get(ptr) {
+		if c == x {
+			ptr += 1;
+		} else if *x == s1[0] {
+			ptr = 1;
+		} else {
+			ptr = 0;
 		}
+	}
+}
 ```
+
+For the extension, I'll be using the same solution with first finding all
+substrings of `s1`.
 
 # Problem 2
 
